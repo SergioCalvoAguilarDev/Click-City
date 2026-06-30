@@ -12,17 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(
-  cors({
-    origin: [
-      "https://127.0.0.1:5500",
-      "https://localhost:5500",
-      "https://click-city-frontend.vercel.app"  // Tu frontend en Vercel
-    ],
-    methods: ["GET", "POST"],
-    credentials: true,
-  }),
-);
+app.use(cors()); // Permite cualquier origen
 
 app.get("/healthz", (req, res) => {
   res.json({ status: "ok" });

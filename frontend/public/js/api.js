@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://click-city.onrender.com/api";
+const API_BASE_URL = "https://click-city.onrender.com/api";
 
 async function searchCities(query) {
   const response = await fetch(

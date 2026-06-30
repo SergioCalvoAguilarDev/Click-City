@@ -1,4 +1,4 @@
-const BACKEND = "http://click-city.onrender.com";
+const BACKEND = "https://click-city.onrender.com";
 
 const params = new URLSearchParams(window.location.search);
 const cityName = params.get("city");

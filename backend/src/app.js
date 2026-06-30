@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     origin: [
-      "http://127.0.0.1:5500",
-      "http://localhost:5500",
+      "https://127.0.0.1:5500",
+      "https://localhost:5500",
       "https://click-city-frontend.vercel.app"  // Tu frontend en Vercel
     ],
     methods: ["GET", "POST"],

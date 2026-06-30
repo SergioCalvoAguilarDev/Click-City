@@ -1,6 +1,6 @@
 import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-const BASE_URL = "http://127.0.0.1:5500/frontend/public/index.html";
+const BASE_URL = "https://127.0.0.1:5500/frontend/public/index.html";
 const CITY = "Madrid";
 const COMMAND_DELAY = 1000;
 
@@ -33,7 +33,7 @@ Given("el usuario ha buscado la ciudad {string}", (ciudad) => {
   cy.intercept("GET", "**/api/places/**/shop").as("shopCall");
 
   cy.visit(
-    `http://127.0.0.1:5500/frontend/public/city.html?city=${encodeURIComponent(ciudad)}&t=${Date.now()}`,
+    `https://127.0.0.1:5500/frontend/public/city.html?city=${encodeURIComponent(ciudad)}&t=${Date.now()}`,
   );
 
   cy.wait("@weatherCall", { timeout: 10000 })

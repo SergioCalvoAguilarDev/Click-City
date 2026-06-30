@@ -20,6 +20,14 @@ app.use(
   }),
 );
 
+app.get("/healthz", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+app.get("/", (req, res) => {
+  res.json({ message: "Click&City API running" });
+});
+
 app.use(express.json());
 
 app.use("/api/cities", citiesRoutes);

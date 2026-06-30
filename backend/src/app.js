@@ -14,11 +14,24 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500",
+    origin: [
+      "http://127.0.0.1:5500",  // Local
+      "http://localhost:5500",  // Local alt
+      "https://click-city.vercel.app"  // Frontend en Vercel (ajusta URL)
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   }),
 );
+
+
+app.get("/healthz", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+app.get("/", (req, res) => {
+  res.json({ message: "Click&City API running" });
+});
 
 app.use(express.json());
 
